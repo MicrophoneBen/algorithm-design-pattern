@@ -17,6 +17,7 @@
         <module>java-algorithm</module>
         <module>design-pattern-sample</module>
         <module>multi-thread-design</module>
+        <module>software-support</module>
     </modules>
 
     <properties>

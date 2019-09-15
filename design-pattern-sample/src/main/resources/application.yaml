@@ -1,0 +1,4 @@
+#日志文件保存路径
+logback:
+  logPath: /Users/zhanbingquan/PCI/choreography/logs
+  appname: designPattern
