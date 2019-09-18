@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
@@ -52,7 +51,7 @@ public class FileUploadController {
             e.printStackTrace();
         }
         long  endTime=System.currentTimeMillis();
-        System.out.println("方法一的运行时间："+String.valueOf(endTime-startTime)+"ms");
+        System.out.println("方法一的运行时间："+ (endTime - startTime) +"ms");
         return "success.html";
     }
     /*
@@ -68,7 +67,7 @@ public class FileUploadController {
         //通过CommonsMultipartFile的方法直接写文件（注意这个时候）
         file.transferTo(newFile);
         long  endTime=System.currentTimeMillis();
-        System.out.println("方法二的运行时间："+String.valueOf(endTime-startTime)+"ms");
+        System.out.println("方法二的运行时间："+ (endTime - startTime) +"ms");
         return "success.html";
     }
     /*
@@ -103,7 +102,7 @@ public class FileUploadController {
             }
         }
         long  endTime=System.currentTimeMillis();
-        System.out.println("方法三的运行时间："+String.valueOf(endTime-startTime)+"ms");
+        System.out.println("方法三的运行时间："+ (endTime - startTime) +"ms");
         return "success.html";
     }
 
@@ -115,5 +114,11 @@ public class FileUploadController {
     @GetMapping("/home")
     public Object helloPage() {
         return "index.html";
+    }
+
+    @GetMapping("/hello")
+    @ResponseBody
+    public Object helloMyPage() {
+        return "HelloWorld";
     }
 }
