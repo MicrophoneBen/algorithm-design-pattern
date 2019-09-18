@@ -18,6 +18,7 @@
         <module>design-pattern-sample</module>
         <module>multi-thread-design</module>
         <module>software-support</module>
+        <module>other-module</module>
     </modules>
 
     <properties>

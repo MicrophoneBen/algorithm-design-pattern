@@ -1,0 +1,26 @@
+#日志文件保存路径
+logback:
+  logPath: /Users/zhanbingquan/PCI/choreography/logs
+  appname: designPattern
+
+spring:
+  devtools:
+    livereload:
+      port: 30527
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 200MB
+  thymeleaf:
+#开发时关闭缓存,不然没法看到实时页面
+    cache: false
+  #前缀
+    prefix: classpath:/templates/
+  #编码
+    encoding: UTF-8
+    servlet:
+  #类型
+      content-type: text/html
+  #名称的后缀
+    suffix: html
