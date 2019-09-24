@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="mysqlgenerator1" targetRuntime="MyBatis3Simple" >
+
+        <!-- include the plugin -->
+        <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin">
+
+            <!-- enable annotations -->
+            <!-- <property name="builder" value="true"/> -->
+            <!-- annotation's option(boolean) -->
+            <property name="builder.fluent" value="true"/>
+            <!-- annotation's option(String) -->
+            <property name="builder.builderMethodName" value="myBuilder"/>
+
+            <property name="accessors" value="true"/>
+            <!-- annotation's option(array of String) -->
+            <property name="accessors.prefix" value="m_, _"/>
+
+            <!-- disable annotations -->
+            <property name="allArgsConstructor" value="false"/>
+        </plugin>
+        <!--不生成注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+        
+        <!-- 配置数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/ai_web_db?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false"
+                        userId="root"
+                        password="" />
+
+        <!-- 指定javaBean生成的位置 -->
+        <javaModelGenerator targetPackage="com.other.updown.domain.dto" targetProject="src/main/java">
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="true"/>
+            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--指定sql映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="com.other.updown.mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 指定dao接口生成的位置，mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.other.updown.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+       <!--  table表生成对应的DoaminObject        
+        <table tableName="VIDEODEV_OPEARATE_FAILED_INFO" domainObjectName="VideoDeviceOperateFailedInfo"></table>
+        <table tableName="VIDEODEV_OPEARATE_SUCCESS_INFO" domainObjectName="VideoDeviceOperateSuccessInfo"></table>
+        <table tableName="DB_CONNECT_INFO" domainObjectName="DbConnectInfo"></table>
+        <table tableName="TABLE_MAPPING_INFO" domainObjectName="TableMappingInfo"></table>-->
+        
+        <table tableName="image_up" domainObjectName="ImagesUpload"></table>
+		<!--<table tableName="RM_VIDEODEV_INFO" domainObjectName="VideoDeviceInfo"></table>
+		<table tableName="VIID_DISPATCHED_DB" domainObjectName="ViidDispatchedDb"></table>
+		<table tableName="VIID_DISPATCHED_FACE_FEATURE" domainObjectName="ViidDispatchedFaceFeature"></table>
+		<table tableName="VIID_DISPATCHED_PERSON_TAG_REL" domainObjectName="ViidDispatchedPersonTagRel"></table>
+		<table tableName="VIID_DISPATCHED_OBJECT" domainObjectName="ViidDispatchedObject"></table>
+		<table tableName="VIID_DISPATCHED_PERSON" domainObjectName="ViidDispatchedPerson"></table>
+		<table tableName="VIID_DISPATCHED_TASK" domainObjectName="ViidDispatchedTask"></table>
+		<table tableName="VIID_DISPATCHED_TASK_DB" domainObjectName="ViidDispatchedTaskDb"></table>
+		<table tableName="VIID_DISPATCHED_CHECK_ALGO_REL" domainObjectName="ViidDispatchedCheckAlgoRel"></table>
+		<table tableName="VIID_DISPATCHED_ALGO_REL" domainObjectName="ViidDispatchedAlgoRel"></table> 
+		<table tableName="VIID_DISPATCHED_FEISHI_ALGO_REL" domainObjectName="ViidDispatchedFeishiAlgoRel"></table>-->
+    </context>
+
+</generatorConfiguration>
