@@ -15,8 +15,8 @@ RUN apk update && apk upgrade
 # Alpine to install  Glibc https://github.com/sgerrand/alpine-pkg-glibc
 RUN apk --no-cache add ca-certificates wget  
 ADD software/  /opt/softare/
-RUN cp /opt/software/sgerrand.rsa.pub  /etc/apk/keys/sgerrand.rsa.pub           \
-    && cd /opt/software                                                          \
+RUN cp /opt/software/sgerrand.rsa.pub  /etc/apk/keys/sgerrand.rsa.pub
+RUN cd /opt/software                                                             \
     && apk add glibc-2.29-r0.apk                                                  \
     && apk add glibc-bin-2.29-r0.apk                                               \
     && apk add glibc-i18n-2.29-r0.apk                                               \
@@ -25,5 +25,6 @@ RUN cp /opt/software/sgerrand.rsa.pub  /etc/apk/keys/sgerrand.rsa.pub           
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-RUN localedef -i en_US -f UTF-8 en_US.UTF-8                                                              
+RUN localedef -i en_US -f UTF-8 en_US.UTF-8
+CMD ["/bin/bash"]
  
