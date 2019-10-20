@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author zhangbingquan
@@ -59,5 +60,17 @@ public class BaseZkOprate {
         // 关闭连接
         zooKeeper.close();
 
+    }
+
+    public static void bubble(List<Integer> list){
+        for(int i = 0; i < list.size(); i++){
+            for(int j = i; j < list.size(); j++){
+                if(list.get(i) > list.get(j)) {
+                    Integer tmp = list.get(i);
+                    list.set(i, list.get(j));
+                    list.set(j,tmp);
+                }
+            }
+        }
     }
 }

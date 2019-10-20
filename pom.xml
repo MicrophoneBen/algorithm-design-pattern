@@ -19,6 +19,7 @@
         <module>multi-thread-design</module>
         <module>software-support</module>
         <module>other-module</module>
+        <module>kafka-support</module>
     </modules>
 
     <properties>
