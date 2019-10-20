@@ -2,3 +2,27 @@
 logback:
   logPath: /Users/zhanbingquan/learn/designPattern/logs
   appname: designPattern
+#===================== kafka =====================
+# 指定kafka 代理地址，可以多个
+#spring:
+#  kafka:
+#    bootstrap-servers: 192.168.0.104.9092
+##=====================  provider  =====================
+#    producer:
+#      retries: 3
+#    # 每次批量发送消息的数量
+#      batch-size: 16384
+#      buffer-memory: 33554432
+#    # 指定消息key和消息体的编解码方式
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#
+#  #===================== consumer  =====================
+#  # 指定默认消费者group id
+#    consumer:
+#      group-id: test-consumer-group
+#    # 指定消息key和消息体的编解码方式
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    admin:
+#      fail-fast: true
