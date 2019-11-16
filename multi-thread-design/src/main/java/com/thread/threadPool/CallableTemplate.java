@@ -15,9 +15,9 @@ import java.util.concurrent.Callable;
  * @author zhangbingquan
  * @version 2019年09月12日
  * @since 2019年09月12日
- *  多线程模板类。继承实现Call方法
+ * 多线程模板类。继承实现Call方法
  **/
-public abstract class CallableTemplate<V> implements Callable<V>{
+public abstract class CallableTemplate<V> implements Callable<V> {
     /**
      * 前置处理，子类可以Override该方法
      */
@@ -27,6 +27,7 @@ public abstract class CallableTemplate<V> implements Callable<V>{
 
     /**
      * 处理业务逻辑的方法,需要子类去Override
+     *
      * @return
      */
     public abstract V process();

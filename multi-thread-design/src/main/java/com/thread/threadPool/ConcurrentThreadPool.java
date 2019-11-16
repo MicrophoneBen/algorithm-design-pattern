@@ -11,11 +11,17 @@ import java.util.concurrent.*;
  **/
 public class ConcurrentThreadPool implements IConcurrentThreadPool {
     private ThreadPoolExecutor threadPoolExecutor;
-    /**核心线程数*/
+    /**
+     * 核心线程数
+     */
     private int corePoolSize = 10;
-    /**最大线程数*/
+    /**
+     * 最大线程数
+     */
     private int maxMumPoolSize = 50;
-    /**超时300毫秒*/
+    /**
+     * 超时300毫秒
+     */
     private long keepAliveTime = 300;
 
     @Override
@@ -34,7 +40,7 @@ public class ConcurrentThreadPool implements IConcurrentThreadPool {
     public <V> List<V> invokeAll(List<? extends CallableTemplate<V>> tasks) throws InterruptedException, ExecutionException {
         List<Future<V>> tasksResult = threadPoolExecutor.invokeAll(tasks);
         List<V> resultList = new ArrayList<>();
-        for (Future<V> future : tasksResult){
+        for (Future<V> future : tasksResult) {
             resultList.add(future.get());
         }
         return resultList;

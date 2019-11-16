@@ -29,7 +29,7 @@ public class CallableTaskFrameWork implements ICallableFrameWork {
         return currentThreadPool.invokeAll(tasks);
     }
 
-    public void closeAll(){
+    public void closeAll() {
         currentThreadPool.closeConcurrentThreadPool();
     }
 }

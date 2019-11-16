@@ -11,6 +11,6 @@ import java.util.concurrent.ExecutionException;
  * @time 2019-09-12 22:16
  */
 public interface ICallableFrameWork {
-    <V>List<V> submitAll(List<? extends CallableTemplate<V>> tasks)
+    <V> List<V> submitAll(List<? extends CallableTemplate<V>> tasks)
             throws InterruptedException, ExecutionException;
 }

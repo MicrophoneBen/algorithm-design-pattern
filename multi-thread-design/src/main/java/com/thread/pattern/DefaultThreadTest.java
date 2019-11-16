@@ -13,7 +13,7 @@ public class DefaultThreadTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         //执行线程
         Callable<String> threadCallable = new ThreadImplCallable<>("Calculate-thread", 20);
-        FutureTask <String> futureTask = new FutureTask<>(threadCallable);
+        FutureTask<String> futureTask = new FutureTask<>(threadCallable);
         Thread thread = new Thread(futureTask);
         thread.start();
 

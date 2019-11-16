@@ -2,13 +2,13 @@ package com.thread.pool.base;
 
 import java.util.concurrent.Callable;
 /*
-*CallableTemplate类实现了Callable接口，并实现了process方法，该类是一个抽象类，
-* 接收任意返回值的类型，
-* beforeProcess方法为前置处理，
-* afterProcess的后置处理，
-* process为具体的业务逻辑抽象方法，
-* 该方法在子类中实现
-*/
+ *CallableTemplate类实现了Callable接口，并实现了process方法，该类是一个抽象类，
+ * 接收任意返回值的类型，
+ * beforeProcess方法为前置处理，
+ * afterProcess的后置处理，
+ * process为具体的业务逻辑抽象方法，
+ * 该方法在子类中实现
+ */
 
 /**
  * @author zhangbingquan

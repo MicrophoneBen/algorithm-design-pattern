@@ -17,10 +17,11 @@ import java.util.Map;
  * @desc 多线程发送邮件处理类
  * @time 2019-09-12 22:39
  */
-public class SendMessageHandler extends CallableTemplate<Map<String,String>> {
+public class SendMessageHandler extends CallableTemplate<Map<String, String>> {
     private String email;
     private String content;
-    public SendMessageHandler(String email, String content){
+
+    public SendMessageHandler(String email, String content) {
         this.email = email;
         this.content = content;
     }
@@ -30,7 +31,7 @@ public class SendMessageHandler extends CallableTemplate<Map<String,String>> {
     public Map<String, String> process() {
         SendMessageService sendMessageService = new SendMessageService();
         sendMessageService.sendMessage(email, content);
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put(email, content);
         return map;
     }

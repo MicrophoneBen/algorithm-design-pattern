@@ -34,9 +34,10 @@ public class ConcurrentThreadPool implements ICurrentThreadPool {
                 corePoolSize, maximumPoolSize,
                 keepAliveTime, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
     }
+
     //关闭线程池
-    public void closeConcurrentThreadPool(){
-        if(threadPoolExecutor != null){
+    public void closeConcurrentThreadPool() {
+        if (threadPoolExecutor != null) {
             threadPoolExecutor.shutdown();
         }
     }
@@ -51,7 +52,7 @@ public class ConcurrentThreadPool implements ICurrentThreadPool {
     public <V> List<V> invokeAll(List<? extends CallableTemplate<V>> tasks) throws InterruptedException, ExecutionException {
         List<Future<V>> taskResult = threadPoolExecutor.invokeAll(tasks);
         List<V> resultList = new ArrayList<>();
-        for(Future<V> task : taskResult){
+        for (Future<V> task : taskResult) {
             resultList.add(task.get());
         }
         return resultList;

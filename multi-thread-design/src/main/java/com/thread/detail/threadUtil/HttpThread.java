@@ -10,12 +10,12 @@ import java.util.concurrent.CountDownLatch;
  * @version 2019年09月07日
  * @since 2019年09月07日
  **/
-public class HttpThread extends AbstractHttpThread<List<Map<String,Object>>> implements Callable<List<Map<String,Object>>> {
+public class HttpThread extends AbstractHttpThread<List<Map<String, Object>>> implements Callable<List<Map<String, Object>>> {
     private String taskType;
     private String username;
     private CountDownLatch countDownLatch;
 
-    public HttpThread(CountDownLatch countDownLatch){
+    public HttpThread(CountDownLatch countDownLatch) {
         this.countDownLatch = countDownLatch;
     }
 
